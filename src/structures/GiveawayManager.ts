@@ -69,7 +69,7 @@ export class ForgeGiveaway extends ForgeExtension {
         (client as any).giveawaysManager = this;
 
         // Load events and natives
-        EventManager.load('ForgeGiveaway', join(__dirname, 'events'));
+        EventManager.load('ForgeGiveaway', join(__dirname, '..', 'events'));
         // Natives are loaded automatically by ForgeScript when the extension is initialized
 
         // Load specific events if provided

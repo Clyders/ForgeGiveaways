@@ -61,7 +61,7 @@ class ForgeGiveaway extends forgescript_1.ForgeExtension {
         // Attach to client for native functions
         client.giveawaysManager = this;
         // Load events and natives
-        forgescript_1.EventManager.load('ForgeGiveaway', (0, path_1.join)(__dirname, 'events'));
+        forgescript_1.EventManager.load('ForgeGiveaway', (0, path_1.join)(__dirname, '..', 'events'));
         // Natives are loaded automatically by ForgeScript when the extension is initialized
         // Load specific events if provided
         if (this.options.events?.length) {
