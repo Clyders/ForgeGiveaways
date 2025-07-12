@@ -1,4 +1,5 @@
-import { ArgType, NativeFunction, ErrorType } from 'forgescript';
+import { ArgType, NativeFunction, ErrorType } from '@tryforge/forgescript';
+import { DatabaseType, Giveaway } from 'discord-giveaways-super';
 
 export default new NativeFunction({
   name: '$drawGiveawayWinners',
@@ -14,7 +15,7 @@ export default new NativeFunction({
     const manager = ctx.client.giveawaysManager;
     if (!manager) return this.error(ErrorType.Custom, 'Giveaway manager not found.');
     const all = manager.getAll();
-    const gw = all.find(g => String(g.messageID) === String(id));
+    const gw = all.find((g: Giveaway<DatabaseType.JSON>) => String(g.messageID) === String(id));
     if (!gw) return this.error(ErrorType.Custom, 'Giveaway not found.');
     if (typeof gw.reroll === 'function') {
       const winners = await gw.reroll();

@@ -1,7 +1,3 @@
-declare const _default: {
-    name: string;
-    description: string;
-    listener(giveaway: any): Promise<void>;
-    intents: string[];
-};
+import { GiveawayEventHandler } from '../structures/GiveawayEventManager';
+declare const _default: GiveawayEventHandler<"giveawayEnd">;
 export default _default;

@@ -1,10 +1,10 @@
 import { Client } from 'discord.js';
-import { GiveawayManager, IGiveawayManagerOptions } from './GiveawayManager';
+import { ForgeGiveaway, IGiveawayManagerOptions } from './structures/GiveawayManager';
 
 declare module 'discord.js' {
   interface Client {
-    giveawaysManager?: GiveawayManager;
+    giveawaysManager?: ForgeGiveaway;
   }
 }
 
-export { GiveawayManager, IGiveawayManagerOptions };
+export { ForgeGiveaway, IGiveawayManagerOptions };

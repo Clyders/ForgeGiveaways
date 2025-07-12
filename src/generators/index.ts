@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { GIVEAWAY_STORAGE_NAME } from '../index'
-import { generateMetadata } from 'forgescript'
+import { generateMetadata } from '@tryforge/forgescript'
 import { join } from 'path'
 
 generateMetadata(

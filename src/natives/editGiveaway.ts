@@ -1,4 +1,5 @@
-import { ArgType, NativeFunction, ErrorType } from 'forgescript';
+import { ArgType, NativeFunction, ErrorType } from '@tryforge/forgescript';
+import { DatabaseType, Giveaway } from 'discord-giveaways-super';
 
 export default new NativeFunction({
   name: '$editGiveaway',
@@ -16,7 +17,7 @@ export default new NativeFunction({
     const manager = ctx.client.giveawaysManager;
     if (!manager) return this.error(ErrorType.Custom, 'Giveaway manager not found.');
     const all = manager.getAll();
-    const gw = all.find(g => Number(g.id) === Number(id));
+    const gw = all.find((g: Giveaway<DatabaseType.JSON>) => Number(g.id) === Number(id));
     if (!gw) return this.error(ErrorType.Custom, 'Giveaway not found.');
     if (!gw.isRunning()) {
       return this.error(ErrorType.Custom, 'Giveaway is not running.');

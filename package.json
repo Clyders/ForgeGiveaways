@@ -19,10 +19,10 @@
   "author": "Clyders",
   "license": "MIT",
   "devDependencies": {
+    "@tryforge/forgescript": "github:tryforge/ForgeScript#dev",
     "@types/node": "^20.11.30",
     "discord.js": "^14.14.1",
     "dotenv": "^16.4.5",
-    "@tryforge/forgescript": "github:tryforge/ForgeScript#dev",
     "typescript": "^5.4.5"
   },
   "dependencies": {

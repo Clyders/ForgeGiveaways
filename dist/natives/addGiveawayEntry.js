@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const forgescript_1 = require("forgescript");
+const forgescript_1 = require("@tryforge/forgescript");
 exports.default = new forgescript_1.NativeFunction({
     name: '$addGiveawayEntry',
     description: 'Add a user entry to a giveaway by adding the reaction (requires bot permissions).',
@@ -19,7 +19,7 @@ exports.default = new forgescript_1.NativeFunction({
         if (!manager)
             return this.error(forgescript_1.ErrorType.Custom, 'Giveaway manager not found.');
         const all = manager.getAll();
-        const gw = all.find(g => String(g.messageID) === String(id));
+        const gw = all.find((g) => String(g.messageID) === String(id));
         if (!gw)
             return this.error(forgescript_1.ErrorType.Custom, 'Giveaway not found.');
         if (!gw.isRunning()) {
@@ -34,9 +34,6 @@ exports.default = new forgescript_1.NativeFunction({
             if (!message) {
                 return this.error(forgescript_1.ErrorType.Custom, 'Giveaway message not found.');
             }
-            // Add the reaction (this will add the bot's reaction, not the user's)
-            // Note: Discord.js does not allow bots to add reactions on behalf of other users
-            // This is a limitation - only the user themselves can add their reaction
             const reaction = '🎉'; // Default reaction
             await message.react(reaction);
             return this.success(true);

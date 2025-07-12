@@ -1,4 +1,4 @@
-import { ArgType, NativeFunction, ErrorType } from 'forgescript';
+import { ArgType, NativeFunction, ErrorType } from '@tryforge/forgescript';
 
 export default new NativeFunction({
   name: '$pauseGiveaway',

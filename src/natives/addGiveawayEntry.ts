@@ -1,4 +1,5 @@
-import { ArgType, NativeFunction, ErrorType } from 'forgescript';
+import { ArgType, NativeFunction, ErrorType } from '@tryforge/forgescript';
+import { DatabaseType, Giveaway } from 'discord-giveaways-super';
 
 export default new NativeFunction({
   name: '$addGiveawayEntry',
@@ -17,7 +18,7 @@ export default new NativeFunction({
     if (!manager) return this.error(ErrorType.Custom, 'Giveaway manager not found.');
     
     const all = manager.getAll();
-    const gw = all.find(g => String(g.messageID) === String(id));
+    const gw = all.find((g: Giveaway<DatabaseType.JSON>) => String(g.messageID) === String(id));
     if (!gw) return this.error(ErrorType.Custom, 'Giveaway not found.');
     
     if (!gw.isRunning()) {
@@ -35,9 +36,6 @@ export default new NativeFunction({
         return this.error(ErrorType.Custom, 'Giveaway message not found.');
       }
       
-      // Add the reaction (this will add the bot's reaction, not the user's)
-      // Note: Discord.js does not allow bots to add reactions on behalf of other users
-      // This is a limitation - only the user themselves can add their reaction
       const reaction = '🎉'; // Default reaction
       await message.react(reaction);
       

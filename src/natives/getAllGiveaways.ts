@@ -1,4 +1,5 @@
-import { NativeFunction } from 'forgescript';
+import { NativeFunction } from '@tryforge/forgescript';
+import { DatabaseType, Giveaway } from 'discord-giveaways-super';
 
 export default new NativeFunction({
   name: '$getAllGiveaways',
@@ -6,6 +7,6 @@ export default new NativeFunction({
   unwrap: true,
   async execute(ctx) {
     const all = ctx.client.giveawaysManager?.getAll() ?? [];
-    return this.success(all.map(g => g.id).join(','));
+    return this.success(all.map((g: Giveaway<DatabaseType.JSON>) => g.id).join(','));
   }
 });

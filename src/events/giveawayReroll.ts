@@ -1,11 +1,24 @@
-import { EventManager } from 'forgescript';
+import { GiveawayEventHandler } from '../structures/GiveawayEventManager'
+import { DatabaseType, Giveaway } from 'discord-giveaways-super'
+import { ForgeGiveaway } from '../structures/GiveawayManager'
+import { Interpreter } from '@tryforge/forgescript'
 
-export default {
-  name: 'giveawayReroll',
-  description: 'Emitted when a giveaway is rerolled.',
-  async listener(giveaway: any) {
-    // Add any custom logic here, e.g., logging or notification
-    // Example: console.log(`Giveaway rerolled: ${giveaway.id}`);
-  },
-  intents: ['GuildMessageReactions'],
-};
+export default new GiveawayEventHandler<'giveawayReroll'>({
+    name: 'giveawayReroll',
+    description: 'Emitted when a giveaway is rerolled.',
+    listener: async function(giveaway: Giveaway<DatabaseType.JSON>, winners: any[]) {
+        const commands = ForgeGiveaway.Client?.giveawaysManager?.commands?.get('giveawayReroll')
+
+        if (commands?.length) {
+            for (const command of commands) {
+                Interpreter.run({
+                    command,
+                    client: ForgeGiveaway.Client!,
+                    data: command.compiled.code,
+                    obj: { giveaway, winners }
+                })
+            }
+        }
+    },
+    intents: ['GuildMessageReactions']
+})

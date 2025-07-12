@@ -1,4 +1,4 @@
-import { ArgType, NativeFunction, ErrorType } from 'forgescript';
+import { ArgType, NativeFunction, ErrorType } from '@tryforge/forgescript';
 import { TextChannel } from 'discord.js';
 
 export default new NativeFunction({

@@ -1,4 +1,5 @@
-import { ArgType, NativeFunction } from 'forgescript';
+import { ArgType, NativeFunction } from '@tryforge/forgescript';
+import { DatabaseType, Giveaway } from 'discord-giveaways-super';
 
 export default new NativeFunction({
   name: '$isGiveawayFinished',
@@ -10,7 +11,7 @@ export default new NativeFunction({
   ],
   async execute(ctx, [id]) {
     const all = ctx.client.giveawaysManager?.getAll() ?? [];
-    const gw = all.find(g => String(g.id) === String(id));
+    const gw = all.find((g: Giveaway<DatabaseType.JSON>) => String(g.id) === String(id));
     return this.success(gw?.isFinished ?? false);
   }
 });

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const forgescript_1 = require("forgescript");
+const forgescript_1 = require("@tryforge/forgescript");
 exports.default = new forgescript_1.NativeFunction({
     name: '$removeGiveawayEntry',
     description: 'Remove a user entry from a giveaway by removing their reaction.',
@@ -19,7 +19,7 @@ exports.default = new forgescript_1.NativeFunction({
         if (!manager)
             return this.error(forgescript_1.ErrorType.Custom, 'Giveaway manager not found.');
         const all = manager.getAll();
-        const gw = all.find(g => String(g.messageID) === String(id));
+        const gw = all.find((g) => String(g.messageID) === String(id));
         if (!gw)
             return this.error(forgescript_1.ErrorType.Custom, 'Giveaway not found.');
         if (!gw.isRunning()) {

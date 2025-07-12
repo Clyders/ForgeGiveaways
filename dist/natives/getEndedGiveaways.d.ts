@@ -1,3 +1,3 @@
-import { NativeFunction } from 'forgescript';
-declare const _default: NativeFunction<import("forgescript").IArg<import("forgescript").ArgType, boolean, boolean, import("forgescript").EnumLike<any>>[], true>;
+import { NativeFunction } from '@tryforge/forgescript';
+declare const _default: NativeFunction<import("@tryforge/forgescript").IArg<import("@tryforge/forgescript").ArgType, boolean, boolean, import("@tryforge/forgescript").EnumLike<any>>[], true>;
 export default _default;

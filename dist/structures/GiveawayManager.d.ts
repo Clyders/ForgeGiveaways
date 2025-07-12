@@ -1,5 +1,5 @@
 import { DatabaseType, Giveaways, IDatabaseStructure, IEmbedStringsDefinitions, IGiveawayButtons, IGiveawaysEvents, IGiveaway } from 'discord-giveaways-super';
-import { ForgeClient, ForgeExtension } from 'forgescript';
+import { ForgeClient, ForgeExtension } from '@tryforge/forgescript';
 import { TextChannel, User } from 'discord.js';
 export interface IGiveawayManagerOptions {
     events?: (keyof IGiveawaysEvents<DatabaseType.JSON>)[];
@@ -7,16 +7,16 @@ export interface IGiveawayManagerOptions {
     defineEmbedStrings?: <IsTemplate extends boolean = false>(giveaway: IGiveaway, giveawayHost: User) => Partial<IEmbedStringsDefinitions<IsTemplate>>;
     buttons?: IGiveawayButtons;
 }
-export declare class GiveawayManager extends ForgeExtension {
+export declare class ForgeGiveaway extends ForgeExtension {
     #private;
     name: string;
     description: string;
     version: string;
-    targetVersions: string[];
     client: ForgeClient | null;
     options: IGiveawayManagerOptions;
     self: Giveaways<DatabaseType.JSON, `${string}.json`, IDatabaseStructure> | null;
     static Client: ForgeClient | null;
+    commands: Map<string, any[]>;
     /**
      * Extension options.
      */

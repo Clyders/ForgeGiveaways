@@ -4,7 +4,7 @@ import { Client, TextChannel, User } from 'discord.js';
 import { join } from 'path';
 
 // Import package.json for version info
-const PACKAGE = require('../package.json');
+const PACKAGE = require('../../package.json');
 
 const resolve = (arg: string, to: string) => arg.replace('structures', to);
 
@@ -18,17 +18,17 @@ export interface IGiveawayManagerOptions {
     buttons?: IGiveawayButtons;
 }
 
-export class GiveawayManager extends ForgeExtension {
+export class ForgeGiveaway extends ForgeExtension {
     name: string = 'ForgeGiveaway';
     description: string = 'Modern Discord giveaway management for ForgeScript';
     version: string = PACKAGE.version;
-    targetVersions: string[] = ['1.4.0'];
 
     client: ForgeClient | null = null;
     options: IGiveawayManagerOptions;
     #path: `${string}.json`;
     self: Giveaways<DatabaseType.JSON, `${string}.json`, IDatabaseStructure> | null = null;
     static Client: ForgeClient | null = null;
+    public commands: Map<string, any[]> = new Map();
 
     /**
      * Extension options.
@@ -63,7 +63,7 @@ export class GiveawayManager extends ForgeExtension {
             })
         });
 
-        GiveawayManager.Client = client;
+        ForgeGiveaway.Client = client;
         
         // Attach to client for native functions
         (client as any).giveawaysManager = this;
