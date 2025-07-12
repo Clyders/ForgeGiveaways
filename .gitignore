@@ -1,0 +1,9 @@
+# Folders
+/node_modules
+/test
+
+# Files
+.env
+pnpm-lock.yaml
+package-lock.json
+tsconfig.tsbuildinfo

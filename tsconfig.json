@@ -1,0 +1,35 @@
+{
+    "compilerOptions": {
+        "alwaysStrict": true,
+        "baseUrl": "./",
+        "declaration": true,
+        "incremental": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "module": "CommonJS",
+        "outDir": "dist",
+        "paths": {
+            "@types": ["src/index", "dist/index.d.ts", "node_modules/@types"],
+            "index": ["src/index", "dist/index"]
+        },
+        "resolveJsonModule": true,
+        "rootDir": "src",
+        "skipDefaultLibCheck": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "target": "ES2020",
+        "typeRoots": [
+            "node_modules/@types",
+            "src/index.ts",
+            "dist/index.d.ts"
+        ]
+    },
+    "include": [
+        "./src/**/*.ts"
+    ],
+    "exclude": [
+        "/dist",
+        "/node_modules",
+        "/test"
+    ]
+}

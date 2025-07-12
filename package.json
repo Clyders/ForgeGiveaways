@@ -1,0 +1,31 @@
+{
+  "name": "forge.gw",
+  "version": "1.0.0",
+  "description": "Manage and handle Discord giveaways with ease.",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "watch": "tsc -w",
+    "build": "tsc",
+    "test": "node test",
+    "buildmeta": "node dist/generators/index.js"
+  },
+  "keywords": [
+    "forgescript",
+    "botforge",
+    "giveaways",
+    "discord"
+  ],
+  "author": "Clyders",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.4.5",
+    "forgescript": "github:tryforge/ForgeScript#dev",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "discord-giveaways-super": "^1.1.1"
+  }
+}

@@ -1,0 +1,13 @@
+# Folders
+/metadata
+/node_modules
+/src
+/test
+
+# Files
+.env
+.gitignore
+pnpm-lock.yaml
+package-lock.json
+tsconfig.json
+tsconfig.tsbuildinfo
