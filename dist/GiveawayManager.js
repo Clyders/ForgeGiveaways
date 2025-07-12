@@ -14,7 +14,7 @@ var _GiveawayManager_path;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GiveawayManager = void 0;
 const discord_giveaways_super_1 = require("discord-giveaways-super");
-const forgescript_1 = require("forgescript");
+const forgescript_1 = require("@tryforge/forgescript");
 const path_1 = require("path");
 // Import package.json for version info
 const PACKAGE = require('../package.json');

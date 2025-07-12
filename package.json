@@ -22,7 +22,7 @@
     "@types/node": "^20.11.30",
     "discord.js": "^14.14.1",
     "dotenv": "^16.4.5",
-    "forgescript": "github:tryforge/ForgeScript#dev",
+    "@tryforge/forgescript": "github:tryforge/ForgeScript#dev",
     "typescript": "^5.4.5"
   },
   "dependencies": {

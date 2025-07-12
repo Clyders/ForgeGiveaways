@@ -1,5 +1,5 @@
 import { DatabaseType, Giveaways, IDatabaseStructure, IEmbedStringsDefinitions, IGiveawayButtons, IGiveawaysEvents, IGiveaway } from 'discord-giveaways-super';
-import { EventManager, ForgeClient, ForgeExtension } from 'forgescript';
+import { EventManager, ForgeClient, ForgeExtension } from '@tryforge/forgescript';
 import { Client, TextChannel, User } from 'discord.js';
 import { join } from 'path';
 
