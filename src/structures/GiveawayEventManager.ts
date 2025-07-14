@@ -1,4 +1,3 @@
-import { EventManager } from '@tryforge/forgescript';
 import { DatabaseType, Giveaway } from 'discord-giveaways-super';
 
 export class GiveawayEventHandler<T extends string> {

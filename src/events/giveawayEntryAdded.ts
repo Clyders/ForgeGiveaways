@@ -1,6 +1,6 @@
 import { GiveawayEventHandler } from '../structures/GiveawayEventManager'
 import { DatabaseType, Giveaway } from 'discord-giveaways-super'
-import { ForgeGiveaway } from '../structures/GiveawayManager'
+import { ForgeGiveaway } from '../GiveawayManager'
 import { Interpreter } from '@tryforge/forgescript'
 
 export default new GiveawayEventHandler<'giveawayEntryAdded'>({

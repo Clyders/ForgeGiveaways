@@ -70,7 +70,7 @@ export class ForgeGiveaway extends ForgeExtension {
 
         // Load events and natives
         EventManager.load('ForgeGiveaway', join(__dirname, '..', 'events'));
-        // Natives are loaded automatically by ForgeScript when the extension is initialized
+        this.load(__dirname + `/natives`)
 
         // Load specific events if provided
         if (this.options.events?.length) {
