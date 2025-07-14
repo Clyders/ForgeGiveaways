@@ -17,7 +17,7 @@ const discord_giveaways_super_1 = require("discord-giveaways-super");
 const forgescript_1 = require("@tryforge/forgescript");
 const path_1 = require("path");
 // Import package.json for version info
-const PACKAGE = require('../../package.json');
+const PACKAGE = require('../package.json');
 const resolve = (arg, to) => arg.replace('structures', to);
 class ForgeGiveaway extends forgescript_1.ForgeExtension {
     /**

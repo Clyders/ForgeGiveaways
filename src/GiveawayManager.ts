@@ -4,7 +4,7 @@ import { Client, TextChannel, User } from 'discord.js';
 import { join } from 'path';
 
 // Import package.json for version info
-const PACKAGE = require('../../package.json');
+const PACKAGE = require('../package.json');
 
 const resolve = (arg: string, to: string) => arg.replace('structures', to);
 
