@@ -1,5 +1,5 @@
 {
-  "name": "forge.gw",
+  "name": "@tryforge/forge.gw",
   "version": "1.0.0",
   "description": "Manage and handle Discord giveaways with ease.",
   "main": "./dist/index.js",
